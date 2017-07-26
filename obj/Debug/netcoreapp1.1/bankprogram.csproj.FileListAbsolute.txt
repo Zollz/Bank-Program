@@ -1,0 +1,9 @@
+C:\users\eddie\documents\github\bankprogram\bin\Debug\netcoreapp1.1\bankprogram.deps.json
+C:\users\eddie\documents\github\bankprogram\bin\Debug\netcoreapp1.1\bankprogram.runtimeconfig.json
+C:\users\eddie\documents\github\bankprogram\bin\Debug\netcoreapp1.1\bankprogram.runtimeconfig.dev.json
+C:\users\eddie\documents\github\bankprogram\obj\Debug\netcoreapp1.1\bankprogram.AssemblyInfo.cs
+C:\Users\Eddie\Documents\GitHub\BankProgram\bin\Debug\netcoreapp1.1\bankprogram.dll
+C:\Users\Eddie\Documents\GitHub\BankProgram\bin\Debug\netcoreapp1.1\bankprogram.pdb
+C:\Users\Eddie\Documents\GitHub\BankProgram\obj\Debug\netcoreapp1.1\bankprogram.dll
+C:\Users\Eddie\Documents\GitHub\BankProgram\obj\Debug\netcoreapp1.1\bankprogram.pdb
+C:\Users\Eddie\Documents\GitHub\BankProgram\obj\Debug\netcoreapp1.1\bankprogram.csprojResolveAssemblyReference.cache
