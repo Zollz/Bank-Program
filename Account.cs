@@ -2,7 +2,6 @@
 using SplashKitSDK;
 
 
-
 public class Account
 {
     private decimal _balance;
@@ -44,13 +43,11 @@ public class Account
 
     public void Print()
     {
-        Console.WriteLine("{0}'s account has ${1} in its balance", _name , _balance);
+        Console.WriteLine("{0}'s account has ${1} in its balance", _name, _balance);
     }
 
     public string Name
     {
         get { return _name; }
     }
-
 }
-

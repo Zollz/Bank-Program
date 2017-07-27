@@ -7042,10 +7042,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Eddie\\Documents\\GitHub\\BankProgram\\bankprogram.csproj",
+      "projectUniqueName": "C:\\Users\\Eddie\\Documents\\GitHub\\Bank-Program\\bankprogram.csproj",
       "projectName": "bankprogram",
-      "projectPath": "C:\\Users\\Eddie\\Documents\\GitHub\\BankProgram\\bankprogram.csproj",
-      "outputPath": "C:\\Users\\Eddie\\Documents\\GitHub\\BankProgram\\obj\\",
+      "projectPath": "C:\\Users\\Eddie\\Documents\\GitHub\\Bank-Program\\bankprogram.csproj",
+      "outputPath": "C:\\Users\\Eddie\\Documents\\GitHub\\Bank-Program\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"

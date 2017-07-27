@@ -3,9 +3,14 @@ using SplashKitSDK;
 
 public class Program
 {
-    public enum MenuOption { Withdraw, Deposit, Transfer, Print, Quit }
-
-
+    public enum MenuOption
+    {
+        Withdraw,
+        Deposit,
+        Transfer,
+        Print,
+        Quit
+    }
 
 
     private static MenuOption ReadUserOption()
@@ -22,8 +27,7 @@ public class Program
             input = Convert.ToInt32(Console.ReadLine());
         } while (input < 1 || input > 5);
         // matching enumeration return
-        return (MenuOption)(input - 1);
-
+        return (MenuOption) (input - 1);
     }
 
     private static void DoWithdraw(Account account)
@@ -34,7 +38,6 @@ public class Program
         WithdrawTransaction newTransaction = new WithdrawTransaction(account, withdraw);
         newTransaction.Execute();
         newTransaction.Print();
-
     }
 
     private static void DoDeposit(Account account)
@@ -55,10 +58,12 @@ public class Program
 
     private static void DoTransfer(Account account, Account account2)
     {
-        decimal deposit;
+        decimal _amount;
         Console.WriteLine("How much would you like to transfer?");
-        deposit = Convert.ToDecimal(Console.ReadLine());
-        TransferTransaction transfer = new TransferTransaction(account2, account, deposit);
+        _amount = Convert.ToDecimal(Console.ReadLine());
+        TransferTransaction transfer = new TransferTransaction(account2, account, _amount);
+        WithdrawTransaction transfer1 = new WithdrawTransaction(account2, _amount);
+        transfer1.Execute();
         transfer.Execute();
         transfer.Print();
     }

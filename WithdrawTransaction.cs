@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using SplashKitSDK;
 
 
 
@@ -17,6 +17,7 @@ public class WithdrawTransaction
 
     public WithdrawTransaction(Account account, decimal amount)
     {
+
         _account = account;
         _amount = amount;
     }

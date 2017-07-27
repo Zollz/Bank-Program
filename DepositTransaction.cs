@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Text;
 
 
-
 public class DepositTransaction
 {
     private Account _account;
@@ -36,6 +35,5 @@ public class DepositTransaction
         {
             Console.WriteLine("Unsuccessful Deposit");
         }
-
     }
 }

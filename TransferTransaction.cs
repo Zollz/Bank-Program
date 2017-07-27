@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using System.Text;
+using SplashKitSDK;
 
 
 class TransferTransaction
@@ -14,14 +14,13 @@ class TransferTransaction
 
     public TransferTransaction(Account fromAccount, Account toAccount, decimal amount)
     {
-        WithdrawTransaction theWithdraw = new WithdrawTransaction(_fromAccount, _amount);
-        DepositTransaction theDeposit = new DepositTransaction(_toAccount, _amount);
-        _theWithdraw = theWithdraw;
-        _theDeposit = theDeposit;
         _amount = amount;
         _toAccount = toAccount;
         _fromAccount = fromAccount;
-
+        DepositTransaction theDeposit = new DepositTransaction(_toAccount, _amount);
+        WithdrawTransaction theWithdraw = new WithdrawTransaction(_fromAccount, _amount);
+        _theWithdraw = theWithdraw;
+        _theDeposit = theDeposit;
     }
 
     public bool Success
@@ -31,18 +30,18 @@ class TransferTransaction
 
     public void Print()
     {
-        Console.WriteLine("Transferred $" + _amount + " from " + _fromAccount + "'s Account to My Account");
+        Console.WriteLine("Transferred $" + _amount + " from  Jeffs's Account to My Account");
     }
 
     public void Execute()
     {
         _theWithdraw.Execute();
 
-        if (_theWithdraw.Success == true)
+        if (_theWithdraw.Success)
         {
             _theDeposit.Execute();
 
-            if (_theDeposit.Success == true)
+            if (_theDeposit.Success)
             {
                 _fromAccount.Deposit(_amount);
             }
@@ -53,4 +52,3 @@ class TransferTransaction
         }
     }
 }
-
