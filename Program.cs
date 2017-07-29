@@ -27,7 +27,7 @@ public class Program
             input = Convert.ToInt32(Console.ReadLine());
         } while (input < 1 || input > 5);
         // matching enumeration return
-        return (MenuOption) (input - 1);
+        return (MenuOption)(input - 1);
     }
 
     private static void DoWithdraw(Account account)
