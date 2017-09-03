@@ -3,16 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 
 
-public class DepositTransaction
+public class DepositTransaction : Transaction
 {
     private Account _account;
-    private decimal _amount;
-    private bool _success = false;
-
-    public bool Success
-    {
-        get { return _success; }
-    }
 
     public DepositTransaction(Account account, decimal amount)
     {
@@ -20,12 +13,13 @@ public class DepositTransaction
         _amount = amount;
     }
 
-    public void Execute()
+    public override void Execute()
     {
+        base.Execute();
         _success = _account.Deposit(_amount);
     }
 
-    public void Print()
+    public override void Print()
     {
         if (Success == true)
         {

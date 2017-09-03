@@ -4,16 +4,9 @@ using SplashKitSDK;
 
 
 
-public class WithdrawTransaction
+public class WithdrawTransaction : Transaction
 {
     private Account _account;
-    private decimal _amount;
-    private bool _success = false;
-
-    public bool Success
-    {
-        get { return _success; }
-    }
 
     public WithdrawTransaction(Account account, decimal amount)
     {
@@ -22,12 +15,13 @@ public class WithdrawTransaction
         _amount = amount;
     }
 
-    public void Execute()
+    public override void Execute()
     {
+        base.Execute();
         _success = _account.Withdraw(_amount);
     }
 
-    public void Print()
+    public override void Print()
     {
         if (Success == true)
         {

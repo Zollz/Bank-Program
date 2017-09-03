@@ -4,11 +4,10 @@ using System.Runtime.CompilerServices;
 using SplashKitSDK;
 
 
-class TransferTransaction
+public class TransferTransaction : Transaction
 {
     private Account _toAccount;
     private Account _fromAccount;
-    private decimal _amount;
     private WithdrawTransaction _theWithdraw;
     private DepositTransaction _theDeposit;
 
@@ -23,25 +22,21 @@ class TransferTransaction
         _theDeposit = theDeposit;
     }
 
-    public bool Success
+    public override void Print()
     {
-        get { return _theWithdraw.Success && _theDeposit.Success; }
+        Console.WriteLine("Transferred ${0} from {1}'s Account to {2}'s Account", _amount, _fromAccount.Name, _toAccount.Name);
     }
 
-    public void Print()
+    public override void Execute()
     {
-        Console.WriteLine("Transferred $" + _amount + " from  Jeffs's Account to My Account");
-    }
-
-    public void Execute()
-    {
+        base.Execute();
         _theWithdraw.Execute();
 
         if (_theWithdraw.Success)
         {
             _theDeposit.Execute();
 
-            if (_theDeposit.Success)
+            if (!_theDeposit.Success)
             {
                 _fromAccount.Deposit(_amount);
             }
@@ -51,4 +46,5 @@ class TransferTransaction
             Console.WriteLine("Transfer not successful");
         }
     }
+
 }
